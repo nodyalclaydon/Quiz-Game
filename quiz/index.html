@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Really hard quiz</title>
+        <link href="index.css" rel="stylesheet" />
+    </head>
+    <body>
+        <section class="setup-container">
+            <h1 id="setup-header">It's Quiz Time!</h1>
+            <p id="setup-text">Show off how smart you are by completing this quiz.</p>
+            <form class="quiz-setup-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="name"> <!--Name Input-->
+
+                <label for="quiz-length">How many questions?</label>
+                <div class="select">
+                    <select name="questions" id="quiz-length">      <!--Number of Questions Select-->
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="25">25</option>
+                        <option value="30">30</option>
+                        <option value="35">35</option>
+                        <option value="40">40</option>
+                        <option value="45">45</option>
+                        <option value="50">50</option>
+                    </select>
+                </div>
+
+                <label for="quiz-type">What kind of questions?</label>
+                <div class="select">
+                    <select name="type" id="quiz-type">         <!--Category choice select-->
+                        <option value="General Knowledge">General Knowledge</option>
+                        <option value="Entertainment: Books">Books</option>
+                        <option value="Entertainment: Film">Film</option>
+                        <option value="Entertainment: Television">TV</option>
+                        <option value="Entertainment: Music">Music</option>
+                        <option value="Science & Nature">Science & Nature</option>
+                        <option value="Sports">Sports</option>
+                        <option value="History">History</option>
+                    </select>
+                </div>
+                <input type="submit" value="Start" id="start-btn">
+            </form>
+        </section>
+
+        <section class="quiz-container">
+            <h1 id="player-score-display"></h1>
+            <h1 id="question-count"></h1>
+            <h2 id="question-display"></h2>
+            <div class="answer-container">
+                <p class="answer" id="answer-correct"></p>
+                <p class="answer incorrect"></p>
+                <p class="answer incorrect"></p>
+                <p class="answer incorrect"></p>
+            </div>
+        </section>
+
+        <section class="quiz-results-container">
+            <h1 id="results-header"></h1>
+            <h1 id="results-score"></h1>
+            <button id="restart">restart</button>
+        </section>
+
+        <script src="index.js"></script>
+    </body>
+</html>
