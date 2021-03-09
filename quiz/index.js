@@ -18,6 +18,7 @@ const quizResultsContainer = document.querySelector(".quiz-results-container")
 const finalScoreHeader = document.getElementById("results-header")
 const finalScoreDisplay = document.getElementById("results-score")
 const restartBtn = document.getElementById("restart")
+const spinnerContainer = document.querySelector(".spinner-container")
 
 // VARIABLES
 let score = 0
@@ -47,7 +48,7 @@ function startGame(event) {
     totalQuestions = numberInput.value
     category = categoryInput.value
     questionCounter = 1
-    quizContainer.style.display = "flex"
+    spinnerContainer.style.display = "flex"
     setupContainer.style.display = "none"
 
     scoreDisplay.innerHTML = `${playerName}'s Score: ${score}`
@@ -99,6 +100,7 @@ function nextQuestion() {
         showResults()
     } else {
         setTimeout(() => {
+            quizContainer.style.display = "flex"
             questionCountDisplay.innerHTML = `Question ${questionCounter}`
             scoreDisplay.innerHTML = `${playerName}'s Score: ${score}`
             questionDisplay.innerHTML = questions[count].question
@@ -113,6 +115,7 @@ function nextQuestion() {
             count++
             correctAnswer.classList.remove("show-correct")
             incorrectAnswer.forEach(item => {item.classList.remove("show-incorrect")})
+            spinnerContainer.style.display = "none"
         }, 3000)
     }
 }

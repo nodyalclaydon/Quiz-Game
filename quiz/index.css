@@ -13,7 +13,7 @@
 }
 
 body {
-    background-color: var(--white);
+    background: var(--white);
 }
 
 section {
@@ -22,7 +22,7 @@ section {
     border-radius: 30px;
     position: absolute;
     width: 300px;
-    height: 400px;
+    height: 350px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -30,11 +30,11 @@ section {
     margin: auto;
     padding: 1em;
     background-color: var(--blue);
+    box-shadow: 3px 3px 25px 10px #afadad;
 }
 
 h1, h2, p {
     color: var(--white);
-    margin-bottom: 20px;
     text-align: center;
 }
 
@@ -98,6 +98,32 @@ label {
 #start-btn:hover,
 #restart:hover {
     transform: scale(1.1);
+    box-shadow: 0 5px 5px rgba(61, 61, 61, .5);
+}
+
+/* SPINNER */
+.spinner-container {
+    display: none;
+}
+
+#spinner {
+    width: 35%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    animation: rotation 1s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
 }
 
 /* QUIZ STYLES */
@@ -115,6 +141,8 @@ label {
 .answer {
     background-color: var(--darkblue);
     padding: .5em;
+    border-radius: 3px;
+    margin-bottom: 10px;
 }
 
 .answer:hover {
@@ -123,15 +151,13 @@ label {
 }
 
 .show-correct {
-    background-color: green;
-    border: 2px solid var(--white);
-    transform: scale(1.1);
+    background-color: rgb(62, 165, 62);
+    box-shadow: 0 0 5px rgba(61, 61, 61, .5);
 }
 
 .show-incorrect {
-    background-color: red;
-    border: 2px solid var(--white);
-    transform: scale(1.1);
+    background-color: rgb(211, 39, 39);
+    box-shadow: 0 0 5px rgba(61, 61, 61, .5);
 }
 
 /* QUIZ RESULTS STYLES */
@@ -143,10 +169,10 @@ label {
 
 /* MEDIA QUERIES */
 
-@media (min-width: 800px) {
+@media (min-width: 1000px) {
     section {
         width: 450px;
-        height: 550px;
+        height: 500px;
         padding: 3em;
     }
     
@@ -187,11 +213,6 @@ label {
         padding: 1em;
         font-size: 1.25rem;
     }
-    
-    .show-correct,
-    .show-incorrect {
-        border: 3px solid var(--white);
-    }
 
     /* RESULTS */
     #results-header,
@@ -203,7 +224,7 @@ label {
 @media (min-width: 1400px) {
     section {
         width: 650px;
-        height: 750px;
+        height: 700px;
         padding: 4em;
     }
     
@@ -245,11 +266,6 @@ label {
     .answer {
         padding: 1.25em;
         font-size: 1.5rem;
-    }
-    
-    .show-correct,
-    .show-incorrect {
-        border: 4px solid var(--white);
     }
 
     /* RESULTS */
