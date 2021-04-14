@@ -101,7 +101,7 @@ function nextQuestion() {
     } else {
         setTimeout(() => {
             quizContainer.style.display = "flex"
-            questionCountDisplay.innerHTML = `Question ${questionCounter}`
+            questionCountDisplay.innerHTML = `Question ${questionCounter} of ${totalQuestions}`
             scoreDisplay.innerHTML = `${playerName}'s Score: ${score}`
             questionDisplay.innerHTML = questions[count].question
             for (let i = answerObject.children.length; i >= 0; i--) { //this for loop randomizes the order of answers
@@ -134,6 +134,7 @@ function showResults() {
     setTimeout(() => {
         let possibleScore = totalQuestions * 10 //used to calculate score percentage
         quizResultsContainer.style.display = "flex"
+        quizContainer.style.display = "none"
         score >= totalQuestions * correctBonus/2 ? finalScoreHeader.innerHTML = `Congrats, ${playerName}!` :
             finalScoreHeader.innerHTML = `Eh, not very good, ${playerName}`
         finalScoreDisplay.innerHTML = `You scored ${score} points, which is ${score / possibleScore * 100}%`
