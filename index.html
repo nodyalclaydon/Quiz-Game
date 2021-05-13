@@ -3,16 +3,17 @@
     <head>
         <title>Really hard quiz</title>
         <link href="index.css" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no" />
     </head>
     <body>
         <section class="setup-container">
             <h1 id="setup-header">It's Quiz Time!</h1>
             <p id="setup-text">Show off how smart you are by completing this quiz.</p>
             <form class="quiz-setup-form">
-                <label for="name">Name:</label>
+                <label for="name">Enter Name:</label>
                 <input type="text" id="name" placeholder="name"> <!--Name Input-->
 
-                <label for="quiz-length">How many questions?</label>
+                <label for="quiz-length">Select Length:</label>
                 <div class="select">
                     <select name="questions" id="quiz-length">      <!--Number of Questions Select-->
                         <option value="5">5</option>
@@ -28,7 +29,7 @@
                     </select>
                 </div>
 
-                <label for="quiz-type">What kind of questions?</label>
+                <label for="quiz-type">Choose Category:</label>
                 <div class="select">
                     <select name="type" id="quiz-type">         <!--Category choice select-->
                         <option value="General Knowledge">General Knowledge</option>
@@ -59,12 +60,13 @@
                 <p class="answer incorrect"></p>
                 <p class="answer incorrect"></p>
             </div>
+            <button class="restart" id="quit">quit</button>
         </section>
 
         <section class="quiz-results-container">
             <h1 id="results-header"></h1>
             <h1 id="results-score"></h1>
-            <button id="restart">restart</button>
+            <button class="restart">restart</button>
         </section>
 
         <script src="index.js"></script>

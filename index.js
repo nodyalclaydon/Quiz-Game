@@ -17,7 +17,7 @@ const correctAnswer = document.getElementById("answer-correct")
 const quizResultsContainer = document.querySelector(".quiz-results-container")
 const finalScoreHeader = document.getElementById("results-header")
 const finalScoreDisplay = document.getElementById("results-score")
-const restartBtn = document.getElementById("restart")
+const restartBtn = document.querySelectorAll(".restart")
 const spinnerContainer = document.querySelector(".spinner-container")
 
 // VARIABLES
@@ -34,7 +34,9 @@ let playerName = ""
 
 // EVENT LISTENERS
 startBtn.addEventListener("click", startGame)
-restartBtn.addEventListener("click", restartGame)
+restartBtn.forEach(btn => {
+    btn.addEventListener("click", restartGame)
+})
 answerObject.addEventListener("click", nextQuestion)
 incorrectAnswer.forEach(item => {
     item.addEventListener("click", questionWrong)
