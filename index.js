@@ -28,7 +28,6 @@ let totalQuestions = null
 let category = ""
 let questions = []
 let currentQuestion = {}
-let availableQuestions = "Might not need"
 const correctBonus = 10
 let playerName = ""
 
